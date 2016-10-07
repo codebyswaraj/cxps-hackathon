@@ -4,17 +4,25 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import {routing} from './app.routing';
+import { DownloadResourceComponent } from './download-resource/download-resource.component';
+import { ReleaseHistoryComponent } from './release-history/release-history.component';
+
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DownloadResourceComponent,
+    ReleaseHistoryComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    routing
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent,DownloadResourceComponent,ReleaseHistoryComponent]
 })
 export class AppModule { }
