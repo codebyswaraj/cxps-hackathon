@@ -1,16 +1,16 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
-import { DownloadResourceServiceService } from './download-resource-service.service';
+import { DownloadResourceService } from './download-resource.service';
 
 describe('Service: DownloadResourceService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [DownloadResourceServiceService]
+      providers: [DownloadResourceService]
     });
   });
 
-  it('should ...', inject([DownloadResourceServiceService], (service: DownloadResourceServiceService) => {
+  it('should ...', inject([DownloadResourceService], (service: DownloadResourceService) => {
     expect(service).toBeTruthy();
   }));
 });

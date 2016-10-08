@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import {routing} from './app.routing';
 import { DownloadResourceComponent } from './download-resource/download-resource.component';
 import { ReleaseHistoryComponent } from './release-history/release-history.component';
+import {DownloadResourceService} from './download-resource/download-resource.service'
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
@@ -22,7 +23,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     HttpModule,
     routing
   ],
-  providers: [],
+  providers: [DownloadResourceService],
   bootstrap: [AppComponent,DownloadResourceComponent,ReleaseHistoryComponent]
 })
 export class AppModule { }

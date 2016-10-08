@@ -2,6 +2,6 @@ export interface DownloadResource{
     id?: number;
     name: string;
     description?: string;
-    version: number;
+    version: string;
     downloadUrl: string;
 }

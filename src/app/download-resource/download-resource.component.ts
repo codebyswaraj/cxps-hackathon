@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {DownloadResource} from './download-resource.json'
-import {DownloadResourceService} from './download-resource-service.service'
+import {DownloadResourceService} from './download-resource.service'
 
 @Component({
-  selector: 'app-download-resource',
+  //selector: 'app-download-resource',
   templateUrl: './download-resource.component.html',
   styleUrls: ['./download-resource.component.css']
 })
@@ -16,12 +16,11 @@ export class DownloadResourceComponent implements OnInit {
   constructor(private dwldResoService : DownloadResourceService){ }
 
   ngOnInit(){
+    console.log("Coming -----> 1");
     this.dwldResoService
       .get()
       .subscribe(
-         /* happy path */ d => this.downloadResources = d,
-         /* error path */ e => this.errorMessage = e,
-         /* onComplete */ () => this.isLoading = false);
+         /* happy path */ d => this.downloadResources = d);
   }
 
 }

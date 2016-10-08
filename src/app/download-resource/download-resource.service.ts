@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
-import { Http, Response, Headers} from '@angular/http';
+import { Http, Response, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import { DownloadResource } from './download-resource.json';
 
 @Injectable()
-export class DownloadResourceServiceService {
+export class DownloadResourceService {
 
-  private baseUrl: string = 'http://swapi.co/api';
-  constructor(private http: Http) {
-  }
+  private baseUrl: string = 'http://demo8566578.mockable.io/test';
+  constructor(private http: Http) {}
+  
   get(): Observable<DownloadResource[]>{
+    console.log("Coming 2");
     let downloadResource$ = this.http
-      .get(`${this.baseUrl}`, {headers: this.getHeaders()})
+      .get(`${this.baseUrl}`)
       .map(mapDownloadResources)
       .catch(handleError);
       return downloadResource$;
@@ -25,16 +26,19 @@ export class DownloadResourceServiceService {
 }
 
 function mapDownloadResources(response: Response): DownloadResource[] {
-  return response.json().map(toDownloadResource);
+  console.log("Coming 3");
+  return response.json().results.map(toDownloadResource);
 }
 
 function toDownloadResource(r: any): DownloadResource {
+  console.log("Coming 4");
   let downloadResource = <DownloadResource>({
     name: r.name,
     description: r.description,
     version: r.version,
     downloadUrl: r.downloadUrl,
   });
+  console.log('Parsed DownloadResource:', downloadResource);
   return downloadResource;
 }
 function handleError (error: any) {
