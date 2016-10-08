@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {DownloadResource} from './download-resource.json'
+import {DownloadResourceService} from './download-resource-service.service'
 
 @Component({
   selector: 'app-download-resource',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DownloadResourceComponent implements OnInit {
 
-  constructor() { }
+  downloadResources: DownloadResource[] = [];
+  errorMessage: string = '';
+  isLoading: boolean = true;
 
-  ngOnInit() {
+  constructor(private dwldResoService : DownloadResourceService){ }
+
+  ngOnInit(){
+    this.dwldResoService
+      .get()
+      .subscribe(
+         /* happy path */ d => this.downloadResources = d,
+         /* error path */ e => this.errorMessage = e,
+         /* onComplete */ () => this.isLoading = false);
   }
 
 }

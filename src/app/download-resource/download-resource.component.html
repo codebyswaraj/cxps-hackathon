@@ -1,3 +1,13 @@
-<p>
-  download-resource works!
-</p>
+
+  <div class="jumbotron container-fluid header">
+    <h1 style="text-align:center">Download Resources</h1>
+  </div>
+  <div class="container">
+  <div class="row">
+    <div *ngFor="let downloadResource of downloadResources" (click)="gotoDetail(hero)" class="col-md-4 rowElement">
+      <div class="element" >
+        <h4 class="h4">{{downloadResource.name}}</h4>
+      </div>
+    </div>
+  </div>
+</div>
