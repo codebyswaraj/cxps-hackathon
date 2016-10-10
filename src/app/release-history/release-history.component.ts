@@ -5,7 +5,7 @@ import {ReleaseHistoryService} from './release-history.service'
 @Component({
   //selector: 'app-release-history',
   templateUrl: './release-history.component.html',
-  styleUrls: ['./release-history.component.css',"../../../node_modules/font-awesome/css/font-awesome.css", "../../../node_modules/primeng/resources/themes/omega/theme.css","../../../node_modules/primeng/resources/primeng.min.css"]
+  styleUrls: ['./release-history.component.css','../resources/icons/css/font-awesome.min.css', '../../../node_modules/primeng/resources/themes/omega/theme.css','../../../node_modules/primeng/resources/primeng.min.css']
 })
 export class ReleaseHistoryComponent implements OnInit {
 
