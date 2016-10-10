@@ -16,7 +16,6 @@ export class DownloadResourceComponent implements OnInit {
   constructor(private dwldResoService : DownloadResourceService){ }
 
   ngOnInit(){
-    console.log("Coming -----> 1");
     this.dwldResoService
       .get()
       .subscribe(
