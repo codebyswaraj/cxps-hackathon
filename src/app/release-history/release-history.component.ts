@@ -5,7 +5,7 @@ import {ReleaseHistoryService} from './release-history.service'
 @Component({
   //selector: 'app-release-history',
   templateUrl: './release-history.component.html',
-  styleUrls: ['./release-history.component.css']
+  styleUrls: ['./release-history.component.css',"../../../node_modules/font-awesome/css/font-awesome.css", "../../../node_modules/primeng/resources/themes/omega/theme.css","../../../node_modules/primeng/resources/primeng.min.css"]
 })
 export class ReleaseHistoryComponent implements OnInit {
 
@@ -13,9 +13,9 @@ export class ReleaseHistoryComponent implements OnInit {
   errorMessage: string = '';
   isLoading: boolean = true;
 
-  constructor(private releaseHistoryService : ReleaseHistoryService){ }
+  constructor(private releaseHistoryService: ReleaseHistoryService) { }
 
-  ngOnInit(){
+  ngOnInit() {
     this.releaseHistoryService
       .get()
       .subscribe(

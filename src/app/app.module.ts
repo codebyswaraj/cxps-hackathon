@@ -11,6 +11,7 @@ import {DownloadResourceService} from './download-resource/download-resource.ser
 import {ReleaseHistoryService} from './release-history/release-history.service';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {DataTableModule,SharedModule} from 'primeng/primeng';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     FormsModule,
     HttpModule,
+    DataTableModule,
+    SharedModule,
     routing
   ],
   providers: [DownloadResourceService, ReleaseHistoryService],
