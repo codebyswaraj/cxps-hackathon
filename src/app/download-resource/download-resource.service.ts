@@ -6,7 +6,7 @@ import { DownloadResource } from './download-resource.json';
 @Injectable()
 export class DownloadResourceService {
 
-  private baseUrl: string = 'http://demo8566578.mockable.io/test';
+  private baseUrl: string = 'http://demo8566578.mockable.io/download-resource';
   constructor(private http: Http) {}
   
   get(): Observable<DownloadResource[]>{
@@ -26,12 +26,10 @@ export class DownloadResourceService {
 }
 
 function mapDownloadResources(response: Response): DownloadResource[] {
-  console.log("Coming 3");
   return response.json().results.map(toDownloadResource);
 }
 
 function toDownloadResource(r: any): DownloadResource {
-  console.log("Coming 4");
   let downloadResource = <DownloadResource>({
     name: r.name,
     description: r.description,

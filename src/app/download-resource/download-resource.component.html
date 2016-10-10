@@ -1,11 +1,17 @@
 <div class="jumbotron container-fluid header">
-    <h1 style="text-align:center">Download Resources</h1>
-  </div>
-  <div class="container">
-  <div class="row">
-    <div *ngFor="let downloadResource of downloadResources" (click)="gotoDetail(hero)" class="col-md-4 rowElement">
-      <div class="element" >
-        <h4 class="h4">{{downloadResource.name}}</h4>
+  <h1 style="text-align:center">Download Resources</h1>
+</div>
+<div class="container">
+  <div *ngFor="let downloadResource of downloadResources" (click)="gotoDetail(hero)" class="row col-sm-6">
+    <div class="card">
+      <div class="card-header">
+        <span class="h3">{{downloadResource.name}}</span>
+      </div>
+      <div class="card-block card-style">
+        <div class="card-text">Version :- {{downloadResource.version}}</div>
+        <div class="card-text">{{downloadResource.description}}</div>
+        <hr/>
+        <a href="{{downloadResource.downloadUrl}}" class="btn btn-primary pull-xs-right">Download</a>
       </div>
     </div>
   </div>

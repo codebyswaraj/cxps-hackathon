@@ -7,18 +7,6 @@
 .h4{
 	text-align: center;
 }
-.rowElement{
+.card-style{
 	padding: 10px;
-}
-.element{
-	padding: 20px;
-	text-align: center;
-	color: #eee;
-	background-color: #607D8B;
-	border-radius: 2px;
-}
-.element:hover {
-  background-color: #EEE;
-  cursor: pointer;
-  color: #607d8b;
 }
