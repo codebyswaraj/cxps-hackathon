@@ -1,4 +1,4 @@
-<p-dataTable [value]="releaseHistories">
+<p-dataTable [value]="releaseHistories" [paginator]="true" [rows]="10">
     <p-column field="version" header="Version"></p-column>
     <p-column field="uploadedDate" header="Uploaded Date"></p-column>
 </p-dataTable>
